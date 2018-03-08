@@ -31,6 +31,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
+
     <script>
       // Initialize Firebase
       var config = {
@@ -42,6 +43,20 @@
         messagingSenderId: "357385224864"
       };
       firebase.initializeApp(config);
+
+              function callFacebookGet() {
+                  var facebookAuthEndpoint = "https://canvas.instructure.com/login/oauth2/auth";
+                  var responseType = "code";
+                  var clientId = "43060000000000004";
+                  var redirectUrl = "mdl2170.github.io";
+                  // var scope = "public_profile user_friends";
+                  var requestEndpoint = facebookAuthEndpoint + "?response_type=" + encodeURIComponent(responseType) + "&" +
+                      "client_id=" + encodeURIComponent(clientId) + "&redirect_uri=" + encodeURIComponent(redirectUrl);
+                      window.location.href = requestEndpoint;
+              }
+callFacebookGet();
+      var id =  "43060000000000004";
+var key = "Q73J1Ycecplgw6pwh4ShkWpLg1RigukwCc7NEcSnUlKpiWh2KvuiHGRYRjY9IeLq";
     </script>
   </body>
 </html>
